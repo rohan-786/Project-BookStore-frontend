@@ -2,14 +2,14 @@ import {createStore , applyMiddleware , compose} from 'redux';
 import thunk from 'redux-thunk';
 import {createLogger} from 'redux-logger';
 import combineReducer from './combineReducer';
+import promise from 'redux-promise-middleware';
 
-const configureStore = preloadedState =>{
+const middleware = applyMiddleware(promise() , thunk)    
+const preloadedState = {};    
     const store = createStore(
         combineReducer , 
-        compose(
-            applyMiddleware(thunk , createLogger())
-        )
+        preloadedState,
+        compose(middleware)
     )
-    return store;
-}
-export default configureStore;
+
+export default store;

@@ -13,8 +13,18 @@ const jsRule = {
 
 };
 
+const cssRule = {
+    test: /\.css$/,
+    use:[{
+        loader:'style-loader'
+    },{
+        loader:'css-loader',
+        options:{sourceMap:true , importLoaders:1}
+    }]
+}
+
 const _modules = {
-    rules: [jsRule]
+    rules: [jsRule , cssRule]
 }
 
 const entry = {
