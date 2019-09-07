@@ -1,36 +1,55 @@
+/***
+ * This is custom buttom module
+ * Required props :  passToParent function , button label 
+ */
 import React from 'react';
-import {isEmpty} from '../../../utility/utility';
+import { isEmpty } from '../../../utility/utility';
+import style from './button.scss';
 
 
-class CustomButton extends Component {
-    constructor(props){
+class CustomButton extends React.Component {
+    constructor(props) {
         super(props);
+        this.state = {
+            clicked: !1,
+            isHover: !1
+        }
         this.handleOnClick = this.handleOnClick.bind(this);
         this.handleOnHover = this.handleOnHover.bind(this);
     }
 
-    handleOnHover(event){
+    handleOnHover(event) {
+        this.setState({
+            isHover: !this.state.isHover
+        })
+    }
+
+    handleOnClick(event) {
+        const { passToParent } = this.props;
+        this.setState({
+            clicked: !0
+        }, () => {
+            let value = this.state.clicked;
+            passToParent(value);
+        })
 
     }
-    handleOnClick(event){
 
-    }
+    render() {
+        const { label, passToParent} = this.props;
+        const { isHover } = this.state;
+        if (isEmpty(label) || isEmpty(passToParent)) return null;
 
-    render() { 
-        const {theme , label , passToParent}= this.props;
         
-        if(isEmpty(label) || isEmpty(theme) || isEmpty(passToParent)) return null;
-
-     
-        
-        return ( 
-            <button onClick={()=>this.handleOnClick}
-            onMouseOver={()=>this.handleOnHover}
-          
-            >{label}</button>
-
-         );
+        return (
+            <div className='customButton'>
+                <button className={isHover ? `onHover` : '' }
+                    onClick={() => this.handleOnClick()} onMouseEnter={() => this.handleOnHover()}
+                    onMouseOut={() => this.handleOnHover()}>
+                    {label}</button>
+            </div>
+        );
     }
 }
- 
+
 export default CustomButton;

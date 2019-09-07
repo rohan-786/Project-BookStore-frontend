@@ -3,23 +3,14 @@
     height: 60px;
     border-bottom: 2px solid #999;
     
-    .siteLogo{
-        background: url('../../../../../assets/siteLogo.ico');
-        width: 40px;
-        height: 40px;
+    button{
+        background: none;
+        padding: 7px 11px 7px 11px;
         position: absolute;
-        left: 94px;
+        right: 153px;
+        top: 21px;
+        color: green;
+        border: 1px solid green;
     }
-    .siteName{
-        font-size: 25px;
-        position: relative;
-        top:15px;
-        left: 130px;
-    }
-    .signIn{
-        position: relative;
-        right: 10px;
-    }
-
-    
 }
+

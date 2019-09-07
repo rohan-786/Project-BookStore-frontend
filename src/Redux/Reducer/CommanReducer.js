@@ -1,17 +1,21 @@
 import {reducerLogger} from '../utility/utility';
-const initialState = {}
+const initialState = {
+    Overlay:{
+        overLayState:false
+    }
+}
 let previousState; 
 let modifiedState;
-const REDUCER_NAME = "HEADER_REDUX";
+const REDUCER_NAME = "COMMAN_REDUX";
 
 const Reducer = (state = initialState , action) =>{
     previousState = state;
     let {type , data} = action;
     switch(type){
-        case "SET_SIGN_IN_CLICKED":{
-            state = {...state , signIn: data}
+        case "SET_OVERLAY":{
+            state = {...state , Overlay:{...state.Overlay , overLayState : action.data}}
             break;
-        }
+        }    
         default :
             state = {...state}
     }

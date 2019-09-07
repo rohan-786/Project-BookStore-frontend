@@ -4,10 +4,10 @@ export function reducerLogger(previousState , action , finalState , ReducerName)
         {"Reducer" : ReducerName},
         {"PreviousState" : previousState},
         {"Action" : action.type},
-        {"CurrentActionData" : action.payload},
+        {"CurrentActionData" : action.data},
         {"ModifiedState" : finalState},
     ]
-    console.log("Reducer Name ===",ReducerName,"====>",executedActions); 
+    console.log("Reducer Name ===",ReducerName,"==Action==",action.type,"====>",executedActions); 
 }
 
 export const isEmpty = (value) => {
