@@ -25,24 +25,24 @@ class CustomButton extends React.Component {
     }
 
     handleOnClick(event) {
-        const { passToParent } = this.props;
+        const { passToParent ,name='' } = this.props;
         this.setState({
             clicked: !0
         }, () => {
             let value = this.state.clicked;
-            passToParent(value);
+            passToParent(name , value);
         })
 
     }
 
     render() {
-        const { label, passToParent} = this.props;
+        const { label, passToParent,name} = this.props;
         const { isHover } = this.state;
-        if (isEmpty(label) || isEmpty(passToParent)) return null;
+        if (isEmpty(label) || isEmpty(passToParent) || isEmpty(name)) return null;
 
         
         return (
-            <div className='customButton'>
+            <div className={`customButton${name}`}>
                 <button className={isHover ? `onHover` : '' }
                     onClick={() => this.handleOnClick()} onMouseEnter={() => this.handleOnHover()}
                     onMouseOut={() => this.handleOnHover()}>

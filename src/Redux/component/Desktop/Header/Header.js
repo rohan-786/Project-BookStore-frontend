@@ -14,7 +14,7 @@ class Header extends React.Component {
         }
         this.setFieldValue = this.setFieldValue.bind(this);
     }
-    setFieldValue(value){
+    setFieldValue(name , value){
         const {setSignInClicked} = this.props;
         this.setState({
             signInClicked : value
@@ -28,7 +28,8 @@ class Header extends React.Component {
         return ( 
            <div className={'siteHeader'}>
                <Logo/>
-              <CustomButton label={'sign in'} passToParent={this.setFieldValue}/>
+              <CustomButton label={'sign in'} passToParent={this.setFieldValue} 
+               name={'signIn'}/>
               <Login/>
            </div>
          );

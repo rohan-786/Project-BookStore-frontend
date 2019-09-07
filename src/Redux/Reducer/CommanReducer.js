@@ -13,7 +13,7 @@ const Reducer = (state = initialState , action) =>{
     let {type , data} = action;
     switch(type){
         case "SET_OVERLAY":{
-            state = {...state , Overlay:{...state.Overlay , overLayState : action.data}}
+            state = {...state , Overlay:{...state.Overlay , overLayState : data}}
             break;
         }    
         default :

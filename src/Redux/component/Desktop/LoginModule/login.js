@@ -3,6 +3,7 @@ import Overlay from '../../core/CustomOverlay/overlay';
 import { connect } from 'react-redux';
 import { setStore } from '../../../Actions/Action';
 import {isEmpty} from '../../../utility/utility';
+import LoginFrom from './loginFrom';
 
 class Login extends React.Component {
     componentDidMount() {
@@ -13,9 +14,10 @@ class Login extends React.Component {
         const { signIn } = this.props;
         if(isEmpty(signIn) || signIn == false) return null;
 
-        return (<div>
-            <Overlay type={'black'}/>
-            
+        return (<div className='loginWrapper'>
+            {/* <Overlay type={'black'}/> */}
+            LoginForm
+            <LoginFrom/>
         </div>);
     }
 }
