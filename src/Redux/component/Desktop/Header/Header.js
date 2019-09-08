@@ -29,7 +29,7 @@ class Header extends React.Component {
             <div className={'siteHeader'}>
                 <Logo />
                 <CustomButton label={'sign in'} passToParent={this.setFieldValue}
-                    name={'signIn'} />
+                    name={'signIn'} fieldName={`signIn`} />
                 <Login />
             </div>
         );
