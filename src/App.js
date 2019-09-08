@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from './Redux/component/Desktop/Header/Header';
+import HomePage from './pages/HomePage';
 
 
 class App extends React.Component {
-    render() { 
+    render() {
         return (<div>
-        <Header/>   
+            <HomePage />
         </div>);
     }
 }
- 
+
 export default App;

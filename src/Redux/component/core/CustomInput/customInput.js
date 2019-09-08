@@ -1,7 +1,7 @@
 import React from 'react';
 import {isEmpty , validateField} from '../../../utility/utility';
 import PropTypes from 'prop-types';
-
+import style from './customInput.scss';
 
 class CustomInput extends React.Component {
     constructor(props){
@@ -50,7 +50,7 @@ class CustomInput extends React.Component {
             <input type={inputType} placeholder={!isEmpty(placeHolder) ? placeHolder : ''}
             onChange={event=>this.handleChange(event)}></input>
 
-            {!isEmpty(error) && <div>{error}</div>}
+            {!isEmpty(error) && <div className={`error`}>{error}</div>}
         </div>);
     }
 }

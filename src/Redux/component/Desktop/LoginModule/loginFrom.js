@@ -10,10 +10,10 @@ class LoginForm extends React.Component {
     }
 
     setFieldValue = (name, value) => {
+        console.log(name," ",value);
     }
     render() {
         return (
-            <CustomDialog name={`login`} userRequestedAction={'SET_SIGN_IN_CLICKED'}>
                 <div className={`loginForm`}>
                     <CustomInput placeHolder={'Username'} inputType={'text'} name={'login'} passToParent={(event) => { this.setFieldValue() }}
                         errorString={'Please enter correct Username'} errorConstraints={['required', 'onlyAlphabets']} />
@@ -22,7 +22,7 @@ class LoginForm extends React.Component {
                         constraints={{ minLength: 3, maxLength: 10 }} />
                     <CustomButton label={"login"} passToParent={event => { this.setFieldValue() }} name={`login`} />
                 </div>
-            </CustomDialog>);
+           );
     }
 }
 
