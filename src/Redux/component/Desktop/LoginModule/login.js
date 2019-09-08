@@ -15,7 +15,7 @@ class Login extends React.Component {
         if(isEmpty(signIn) || signIn == false) return null;
 
         return (<div className='loginWrapper'>
-            {/* <Overlay type={'black'}/> */}
+            <Overlay type={'black'}/>
             LoginForm
             <LoginFrom/>
         </div>);

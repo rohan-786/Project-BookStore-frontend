@@ -45,7 +45,7 @@ class CustomInput extends React.Component {
          
         if(isEmpty(name)||isEmpty(passToParent) || isEmpty(inputType) || isEmpty(errorConstraints) ) return null;
 
-        return (<div className={`customInputWrapper`}>
+        return (<div className={`customInput${name}`}>
             {!isEmpty(label) && <span>{label}</span> }
             <input type={inputType} placeholder={!isEmpty(placeHolder) ? placeHolder : ''}
             onChange={event=>this.handleChange(event)}></input>
