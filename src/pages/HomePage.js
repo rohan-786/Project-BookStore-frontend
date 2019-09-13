@@ -16,4 +16,7 @@ class HomePage extends React.Component {
     }
 }
 
-export default HomePage;
+const mapStateToProps=state=>{
+    console.log(state);
+}
+export default connect(mapStateToProps , null )(HomePage);

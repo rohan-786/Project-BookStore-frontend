@@ -13,11 +13,9 @@ export const validationFun = {
       return regex.test(value) ? true : 'Only alphabets are allowed';  
     },
     minLength : function(value , minLength) {
-      console.log(minLength);
         return value.length > minLength ? true : `Entered value should be more than ${minLength}`;
     },
     maxLength : function(value , maxLength) {
-      console.log(maxLength);
         return value.length < maxLength  ? true : `Entered value should be less than ${maxLength}`; 
     },
 

@@ -15,8 +15,8 @@ class Login extends React.Component {
         }
     }
     componentDidMount() {
-        const { setOverlay, signIn } = this.props;
-        if (signIn == true)
+        const { setOverlay, signInClicked } = this.props;
+        if (signInClicked == true)
             setOverlay(true);
     }
 
@@ -26,9 +26,9 @@ class Login extends React.Component {
         })
     }
     render() {
-        const { signIn } = this.props;
+        const { signInClicked } = this.props;
         const { registerFormFlag } = this.state;
-        if (isEmpty(signIn) || signIn == false) return null;
+        if (isEmpty(signInClicked) || signInClicked == false) return null;
 
         return (
             <div className='loginWrapper'>
@@ -45,9 +45,9 @@ class Login extends React.Component {
 }
 
 const mapStateToProps = state => {
-    const { header: { signIn } = {} } = state;
+    const { header: { signInClicked } = {} } = state;
 
-    return { signIn }
+    return { signInClicked }
 }
 const mapDispatchToProps = dispatch => ({
     setOverlay(value) {

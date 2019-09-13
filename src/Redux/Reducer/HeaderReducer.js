@@ -9,8 +9,11 @@ const Reducer = (state = initialState , action) =>{
     let {type , data} = action;
     switch(type){
         case "SET_SIGN_IN_CLICKED":{
-            state = {...state , signIn: data}
+            state = {...state , signInClicked: data}
             break;
+        }
+        case "SET_USER_LOGIN_STATUS":{
+            state = {...state , userSignInStatus : data}
         }
         default :
             state = {...state}

@@ -62,7 +62,6 @@ export const validateField = (elem, errorConstraints = [] , constraints = {}) =>
                     break;
 
             }
-            console.log(error," ",index);
             if(error !== true){
                 response [elem.name] = error;
             }

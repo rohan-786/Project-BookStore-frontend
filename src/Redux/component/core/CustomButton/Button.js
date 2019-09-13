@@ -25,6 +25,7 @@ class CustomButton extends React.Component {
     }
 
     handleOnClick(event) {
+        console.log(event.target.value);
         const { passToParent ,fieldName='' } = this.props;
         this.setState({
             clicked: !0
@@ -44,7 +45,7 @@ class CustomButton extends React.Component {
         return (
             <div className={`customButton${name}`}>
                 <button className={isHover ? `onHover` : '' }
-                    onClick={() => this.handleOnClick()} onMouseEnter={() => this.handleOnHover()}
+                    onClick={(event) => this.handleOnClick(event)} onMouseEnter={() => this.handleOnHover()}
                     onMouseOut={() => this.handleOnHover()}>
                     {label}</button>
             </div>

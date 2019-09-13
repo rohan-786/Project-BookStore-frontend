@@ -21,7 +21,6 @@ class Overlay extends React.Component {
 
 
 const mapStateToProps=state=>{
-    console.log(state);
     const {comman:{Overlay:{overLayState}={}}={}} = state;
 
     return {overLayState}
