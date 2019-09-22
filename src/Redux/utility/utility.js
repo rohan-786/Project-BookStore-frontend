@@ -1,4 +1,5 @@
 import { validationFun } from './supportUtility';
+import { noBookImage } from '../../../assets/noBookImage.png';
 export function reducerLogger(previousState, action, finalState, ReducerName) {
     let executedActions = [];
     executedActions = [
@@ -32,15 +33,15 @@ export const isEmpty = (value) => {
 }
 
 
-export const validateField = (elem, errorConstraints = [] , constraints = {}) => {
+export const validateField = (elem, errorConstraints = [], constraints = {}) => {
     const response = {};
     let error;
     try {
         if (isEmpty(elem) || isEmpty(errorConstraints))
             throw new Error('Not sufficient data for validation');
 
-        const {minLength , maxLength} = constraints;            
-        errorConstraints.map((errorField ,index) => {
+        const { minLength, maxLength } = constraints;
+        errorConstraints.map((errorField, index) => {
             switch (errorField) {
                 case 'required':
                     error = validationFun.required(elem.value);
@@ -62,8 +63,8 @@ export const validateField = (elem, errorConstraints = [] , constraints = {}) =>
                     break;
 
             }
-            if(error !== true){
-                response [elem.name] = error;
+            if (error !== true) {
+                response[elem.name] = error;
             }
         })
         return response;
@@ -73,4 +74,29 @@ export const validateField = (elem, errorConstraints = [] , constraints = {}) =>
 
 
 }
+
+export const customValidator = (props : Object, requiredField : Array) => {
+    let status = true;
+    try {
+        if(isEmpty(props) || isEmpty(requiredField)){
+            throw new Error("Required Field not Present");
+        }
+        
+        Object.keys(props).map((field) => {
+            if (requiredField.includes(field)) {
+                return isEmpty(props[field]) ? false : true;
+            }
+        })
+
+        return status;
+    } catch (exception) {
+        console.error(exception);
+    }
+
+
+}
+
+
+
+export const noBookImageUrl = noBookImage;
 

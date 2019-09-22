@@ -1,0 +1,35 @@
+.bookCard{
+    width: 55%;
+    border: 0.3px solid #eee;
+    padding: 10px 0px 10px 40px;
+    box-shadow: 0.2px solide #eee;
+    height: 66px;
+    margin: 10px 0px -2px 25px;
+    background: #fff;
+    display: flex;
+    position: relative;
+    
+    .noBookImage{
+        background: url(../../../../../assets/bookImageSmall.png);
+        width: 66px;
+        height: 70px;
+        background-position: -9px -8px;
+        display: block;
+    }
+
+    .bookHeading{
+        position: relative;
+        left: 2%;
+        top: -1%;
+        font-size: 20px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #666;
+    }
+    .shortDescription{
+        position: absolute;
+    top: 36%;
+    left: 16.4%;
+    color: #999;
+    }
+}

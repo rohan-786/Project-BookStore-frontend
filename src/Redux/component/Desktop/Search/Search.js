@@ -4,6 +4,8 @@ import CustomInput from '../../core/CustomInput/customInput';
 import CustomButton from '../../core/CustomButton/Button';
 import { isEmpty } from '../../../utility/utility';
 import style from './search.scss';
+import {apiCall} from '../../../Api/api';
+import {setStore} from '../../../Actions/Action';
 
 class SearchBox extends React.Component {
     constructor(props) {
@@ -25,11 +27,25 @@ class SearchBox extends React.Component {
                     if (!isEmpty(this.state.searchInput) &&
                         this.state.isSearchClicked == true
                     ) {
-                        console.log(this.state.searchInput);
-                       // this.getTheSearchData();
+                        this.getTheSearchData();
                     }
                 })
             }
+        })
+    }
+
+    getTheSearchData=()=>{
+        const {searchInput} = this.state;
+        const {setSearchedData} = this.props;
+        apiCall.getSearchResult(searchInput)
+        .then(response=>response.json())
+        .then(response=>{
+            response.status == 200 ? 
+            setSearchedData(response.data) :
+            console.log(response.message)
+        })
+        .catch(err=>{
+            console.log(err);
         })
     }
 
@@ -53,6 +69,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-
+    setSearchedData(searchData){
+        dispatch(setStore("SET_SEARCH_DATA",searchData))
+    }
 })
 export default connect(mapStateToProps, mapDispatchToProps)(SearchBox);

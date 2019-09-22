@@ -15,6 +15,12 @@ const Reducer = (state = initialState , action) =>{
         case "SET_USER_LOGIN_STATUS":{
             state = {...state , userSignInStatus : data}
         }
+        case "SET_SEARCH_DATA" :{
+            state = {...state ,  userSearchData : data }
+        }
+        case "SET_SELECTED_BOOK_ID":{
+            state = {...state , selectedBook : data}
+        }
         default :
             state = {...state}
     }

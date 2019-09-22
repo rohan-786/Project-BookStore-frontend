@@ -1,0 +1,16 @@
+.threeDotPopup{
+    position: fixed;
+    border: 1px solid #eee;
+    display: inline-block;
+    box-shadow: 1px 1px 1px 1px #eee;
+    box-shadow: 1px #666;
+    top: 121px;
+    right: 113px;
+    .listContainer{
+        height: auto;
+        width: 128px;
+        position: relative;
+        background: #fff;
+        padding: 10px;
+    }
+}
