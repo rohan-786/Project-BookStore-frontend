@@ -1,29 +1,25 @@
 export const apiCall = {
-    getLoginCall : function(username , password) {
-        console.log(username," ",password);
-        let url = `http://localhost:3333/auth-checking`;
+    getUserInfo : function() {
+        let url = `http://ec2-52-55-120-15.compute-1.amazonaws.com/get-userinfo`;
         return fetch(url,{
             method :'GET',
             headers: {
                   'Content-Type': 'application/json',
-                 'emailid': username,
-                 'password':password
-             }
+            }
         })
     },
 
-    registeredNewUser : function(username , password) {
-        console.log(username," ",password);
-        let url = `http://localhost:3333/new-user`;
+    getUseActivityInfo : function(id) {
+        let url = `http://ec2-52-55-120-15.compute-1.amazonaws.com/get-user-activity`;
         return fetch(url,{
-            method :'POST',
+            method :'GET',
             headers: {
                   'Content-Type': 'application/json',
-                 'emailid': username,
-                 'password':password
-             }
+                  'id':id
+            }
         })
     },
+
 } 
 
 

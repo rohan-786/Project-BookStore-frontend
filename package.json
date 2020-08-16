@@ -17,18 +17,19 @@
     "url": "https://github.com/rohan-786/Project-BookStore-frontend/issues"
   },
   "dependencies": {
-    "redux": "^4.0.0",
-   "redux-promise-middleware": "^5.1.1",
+    "file-loader": "^1.1.11",
+    "moment": "^2.27.0",
+    "node-sass": "^4.12.0",
     "react": "^16.4.1",
+    "react-calendar": "^3.1.0",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-promise-middleware": "^5.1.1",
     "redux-thunk": "^2.3.0",
-    "style-loader": "^0.23.1",
-    "node-sass": "^4.12.0",
     "sass": "^1.22.10",
     "sass-loader": "^7.0.3",
-    "file-loader": "^1.1.11"
-    
+    "style-loader": "^0.23.1"
   },
   "devDependencies": {
     "babel-preset-stage-2": "^6.24.1",
@@ -45,7 +46,6 @@
     "redux-logger": "^3.0.6",
     "babel-plugin-css-modules-transform": "^1.6.1",
     "css-loader": "^0.28.11"
-    
   },
   "homepage": "https://github.com/rohan-786/Project-BookStore-frontend#readme"
 }

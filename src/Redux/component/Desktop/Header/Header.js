@@ -29,10 +29,10 @@ class Header extends React.Component {
         return (
             <div className={'siteHeader'}>
                 <Logo />
-                <Search/>
+                {/* <Search/>
                 <CustomButton label={'sign in'} passToParent={this.setFieldValue}
                     name={'signIn'} fieldName={`signIn`} />
-                <Login />
+                <Login /> */}
             </div>
         );
     }

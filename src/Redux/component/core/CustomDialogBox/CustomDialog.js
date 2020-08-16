@@ -53,7 +53,7 @@ class CustomDialogBox extends React.Component {
             dialogFlag ? <div className={`customDialog${name}`}>
                 <div className={'customDialog'}>
                     {this.props.children}
-                    <i className={'closeButton'} onClick={event => { this.closeDialog() }}></i>
+                    <span className={'closeButton'} onClick={event => { this.closeDialog() }}>X</span>
                 </div>
             </div> : null);
     }

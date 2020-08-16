@@ -3,8 +3,7 @@ import style from './logo.scss';
 
 const Logo = () => {
     return (<div class={`siteLogo`}>
-        <i className='siteLogoIcon'></i>
-        <span className="siteName"><i>bookOverFLow</i></span>
+        <span className="siteName"><b>User Activity Panel</b></span>
     </div>
     )
 }
